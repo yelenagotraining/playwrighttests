@@ -42,3 +42,5 @@ jobs:
         run: npm ci
       - name: Initialize playwright project
         run: npm init playwright@latest
+      - name: run list of files
+        run: ls
