@@ -44,3 +44,7 @@ jobs:
         run: npm init playwright@latest
       - name: run list of files
         run: ls
+      - name: cd to tests and list
+        run: |
+          cd tests
+          ls
