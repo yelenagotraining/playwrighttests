@@ -40,11 +40,7 @@ jobs:
           node-version: '14.x'
       - name: Install dependencies
         run: npm ci
-      - name: Initialize playwright project
-        run: npm init playwright@latest
+      - name: Install Playwright dependencies
+        run: npx playwright install --with-deps
       - name: run list of files
         run: ls
-      - name: cd to tests and list
-        run: |
-          cd tests
-          ls
