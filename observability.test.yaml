@@ -1,0 +1,40 @@
+apiVersion: "1.0.0"
+cmdbAppShortName:
+  - "MyAppShortName"
+squads:
+  - 123456
+base_url: https://myapp.aa.com
+numberofsteps: 1
+tests:
+  - name: fist test using ob as code
+    id: my_first_test
+    template: simple_browser_monitor
+    actions: 
+      - action:
+          description: Loading of AA website
+          step: 0
+          actioncpeform: navigate
+          validate:
+            validation:
+              type: text_match
+              match: Book
+              regex: false
+              fail_if_found: false
+          url: "https://www.aa.com"
+          wait:
+            wait_for: page_complete
+      - action:
+          description: "Click on login"
+          step: 1
+          actioncpeform: 'click'
+          locators:
+            - type: css
+              locator: "#coachmarkContent"
+          button: 0
+    tags:
+      - tag:
+          context: CONTEXTLESS
+          key: "Application:my application"
+      - tag:
+          context: CONTEXTLESS
+          key: "Shortname:myappshortname"
