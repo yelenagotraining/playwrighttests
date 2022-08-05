@@ -40,3 +40,7 @@ jobs:
           node-version: '14.x'
       - name: Install dependencies
         run: npm ci
+     - name: Create Playwright Test
+        run: tsc app.ts
+      - name: Generate test file
+        run: node app.js

@@ -5,4 +5,3 @@ test('fist test using ob as code', async ({ page }) => {
 await page.goto('https://www.aa.com');
 await page.locator('#coachmarkContent').click();
 }); });
-
